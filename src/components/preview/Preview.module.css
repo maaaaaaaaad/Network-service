@@ -3,6 +3,7 @@
 .preview {
   padding-top: 8px;
   flex-basis: 50%;
+  overflow-y: auto;
 }
 
 .title {
