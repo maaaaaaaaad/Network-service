@@ -1,0 +1,29 @@
+@value makerWhite from '/src/common/color.css';
+
+.section {
+  text-align: center;
+  margin: 10px;
+}
+
+.title {
+  margin: 10px;
+}
+
+.ul,
+.li {
+  list-style: none;
+}
+
+.li {
+  margin-bottom: 5px;
+}
+
+.btn {
+  background-color: makerWhite;
+  width: 15rem;
+  height: 2rem;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid black;
+  outline: none;
+}

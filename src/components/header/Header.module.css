@@ -1,0 +1,25 @@
+@value makerWhite, makerBlack from '/src/common/color.css';
+
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 0.5em;
+  position: relative;
+}
+
+.dolce_02 {
+  width: 11rem;
+  border-radius: 5px;
+}
+
+.logout {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  padding: 0.4em;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid makerBlack;
+  cursor: pointer;
+  font-weight: bold;
+}

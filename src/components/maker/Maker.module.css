@@ -1,0 +1,41 @@
+@value mediaQuery from '../../common/size.css';
+
+.maker {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: rgb(214, 249, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(214, 249, 255, 1) 0%,
+    rgba(197, 234, 251, 1) 53%,
+    rgba(232, 251, 254, 1) 100%
+  );
+  border-bottom: 1px solid #74b9ff;
+}
+
+.footer {
+  background: rgb(214, 249, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(214, 249, 255, 1) 0%,
+    rgba(197, 234, 251, 1) 53%,
+    rgba(232, 251, 254, 1) 100%
+  );
+  border-top: 1px solid #74b9ff;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .container {
+    flex-direction: column;
+  }
+}
