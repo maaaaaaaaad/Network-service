@@ -16,7 +16,7 @@ const Maker = ({ FileInput, authService }) => {
       email: "integral5137@gmail.com",
       theme: "Dark",
       message: "Hello",
-      fileName: "Select",
+      fileName: "",
       fileURL: "",
     },
     2: {
@@ -27,7 +27,7 @@ const Maker = ({ FileInput, authService }) => {
       email: "integral5137@gmail.com",
       theme: "White",
       message: "Hello",
-      fileName: "Select",
+      fileName: "",
       fileURL: "",
     },
     3: {
@@ -38,7 +38,7 @@ const Maker = ({ FileInput, authService }) => {
       email: "integral5137@gmail.com",
       theme: "Colorful",
       message: "Hello",
-      fileName: "Select",
+      fileName: "",
       fileURL: "",
     },
   });

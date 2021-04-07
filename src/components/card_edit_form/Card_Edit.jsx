@@ -3,7 +3,7 @@ import Button from "../button/Button";
 import styles from "./Card_Edit.module.css";
 
 const Card_Edit = ({ FileInput, cards, updateCard, deleteCard }) => {
-  const { name, breed, host, email, theme, message, fileName, fileURL } = cards;
+  const { name, breed, host, email, theme, message, fileName } = cards;
 
   const onFileChange = (fileData) => {
     updateCard({

@@ -73,7 +73,7 @@ const Card_Add = ({ FileInput, onAdd }) => {
       <input
         ref={emailRef}
         className={styles.input}
-        type="text"
+        type="email"
         name="email"
         placeholder="Email"
       />
