@@ -6,44 +6,11 @@ import Header from "../header/Header";
 import Preview from "../preview/Preview";
 import styles from "./Maker.module.css";
 
-const Maker = ({ FileInput, authService }) => {
-  const [cards, setCards] = useState({
-    1: {
-      id: "1",
-      name: "Dolce",
-      breed: "Maltese",
-      host: "DONG WOONG OH",
-      email: "integral5137@gmail.com",
-      theme: "Dark",
-      message: "Hello",
-      fileName: "",
-      fileURL: "",
-    },
-    2: {
-      id: "2",
-      name: "Louis",
-      breed: "Poodle",
-      host: "DONG WOONG OH",
-      email: "integral5137@gmail.com",
-      theme: "White",
-      message: "Hello",
-      fileName: "",
-      fileURL: "",
-    },
-    3: {
-      id: "3",
-      name: "Happy",
-      breed: "Labrador Retriever",
-      host: "DONG WOONG OH",
-      email: "integral5137@gmail.com",
-      theme: "Colorful",
-      message: "Hello",
-      fileName: "",
-      fileURL: "",
-    },
-  });
-
+const Maker = ({ FileInput, authService, cardRepository }) => {
   const history = useHistory();
+  const historyState = history?.location?.state;
+  const [cards, setCards] = useState({});
+  const [userId, setUserId] = useState(historyState && historyState.id);
 
   const onLogout = () => {
     authService.logout();
@@ -51,7 +18,9 @@ const Maker = ({ FileInput, authService }) => {
 
   useEffect(() => {
     authService.onAuthChange((user) => {
-      if (!user) {
+      if (user) {
+        setUserId(user.uid);
+      } else {
         history.push("/");
       }
     });
@@ -63,6 +32,7 @@ const Maker = ({ FileInput, authService }) => {
       updated[card.id] = card;
       return updated;
     });
+    cardRepository.saveCard(userId, card);
   };
 
   const deleteCard = (card) => {
@@ -71,6 +41,7 @@ const Maker = ({ FileInput, authService }) => {
       delete updated[card.id];
       return updated;
     });
+    cardRepository.removeCard(userId, card);
   };
 
   return (
