@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./Header.module.css";
 
 const DOLCE = "/images/puppy_01.png";
-const Header = ({ onLogout }) => (
+const Header = memo(({ onLogout }) => (
   <>
     <header className={styles.header}>
       {onLogout && (
@@ -14,6 +14,6 @@ const Header = ({ onLogout }) => (
       <h1 className={styles.title}>Pet Card Maker</h1>
     </header>
   </>
-);
+));
 
 export default Header;

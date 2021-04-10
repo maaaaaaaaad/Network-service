@@ -1,14 +1,14 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./Card.module.css";
 
 const BASIC = "/images/puppy_01.png";
-const Card = ({ cards }) => {
-  const { name, breed, host, email, theme, message, fileName, fileURL } = cards;
+const Card = memo(({ cards }) => {
+  const { name, breed, host, email, theme, message, fileURL } = cards;
   const url = fileURL || BASIC;
 
   return (
     <li className={`${styles.card} ${getStyles(theme)}`}>
-      <img className={styles.img} src={url} alt="profile photo" />
+      <img className={styles.img} src={url} alt="profile" />
       <div className={styles.info}>
         <h1 className={styles.name}>{name}</h1>
         <p className={styles.breed}>{breed}</p>
@@ -18,7 +18,7 @@ const Card = ({ cards }) => {
       </div>
     </li>
   );
-};
+});
 
 function getStyles(theme) {
   switch (theme) {
